@@ -1,0 +1,332 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "MSGraphCustomConnector",
+    "description": "",
+    "version": "1.0"
+  },
+  "host": "graph.microsoft.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/beta/groups": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "@odata.context": {
+                  "type": "string",
+                  "description": "@odata.context"
+                },
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "description": "id"
+                      },
+                      "deletedDateTime": {
+                        "type": "string",
+                        "description": "deletedDateTime"
+                      },
+                      "classification": {
+                        "type": "string",
+                        "description": "classification"
+                      },
+                      "createdDateTime": {
+                        "type": "string",
+                        "description": "createdDateTime"
+                      },
+                      "createdByAppId": {
+                        "type": "string",
+                        "description": "createdByAppId"
+                      },
+                      "description": {
+                        "type": "string",
+                        "description": "description"
+                      },
+                      "displayName": {
+                        "type": "string",
+                        "description": "displayName"
+                      },
+                      "expirationDateTime": {
+                        "type": "string",
+                        "description": "expirationDateTime"
+                      },
+                      "groupTypes": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "groupTypes"
+                      },
+                      "infoCatalogs": {
+                        "type": "array",
+                        "items": {},
+                        "description": "infoCatalogs"
+                      },
+                      "isAssignableToRole": {
+                        "type": "string",
+                        "description": "isAssignableToRole"
+                      },
+                      "mail": {
+                        "type": "string",
+                        "description": "mail"
+                      },
+                      "mailEnabled": {
+                        "type": "boolean",
+                        "description": "mailEnabled"
+                      },
+                      "mailNickname": {
+                        "type": "string",
+                        "description": "mailNickname"
+                      },
+                      "membershipRule": {
+                        "type": "string",
+                        "description": "membershipRule"
+                      },
+                      "membershipRuleProcessingState": {
+                        "type": "string",
+                        "description": "membershipRuleProcessingState"
+                      },
+                      "onPremisesDomainName": {
+                        "type": "string",
+                        "description": "onPremisesDomainName"
+                      },
+                      "onPremisesLastSyncDateTime": {
+                        "type": "string",
+                        "description": "onPremisesLastSyncDateTime"
+                      },
+                      "onPremisesNetBiosName": {
+                        "type": "string",
+                        "description": "onPremisesNetBiosName"
+                      },
+                      "onPremisesSamAccountName": {
+                        "type": "string",
+                        "description": "onPremisesSamAccountName"
+                      },
+                      "onPremisesSecurityIdentifier": {
+                        "type": "string",
+                        "description": "onPremisesSecurityIdentifier"
+                      },
+                      "onPremisesSyncEnabled": {
+                        "type": "string",
+                        "description": "onPremisesSyncEnabled"
+                      },
+                      "preferredDataLocation": {
+                        "type": "string",
+                        "description": "preferredDataLocation"
+                      },
+                      "preferredLanguage": {
+                        "type": "string",
+                        "description": "preferredLanguage"
+                      },
+                      "proxyAddresses": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "proxyAddresses"
+                      },
+                      "renewedDateTime": {
+                        "type": "string",
+                        "description": "renewedDateTime"
+                      },
+                      "resourceBehaviorOptions": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "resourceBehaviorOptions"
+                      },
+                      "resourceProvisioningOptions": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "resourceProvisioningOptions"
+                      },
+                      "securityEnabled": {
+                        "type": "boolean",
+                        "description": "securityEnabled"
+                      },
+                      "securityIdentifier": {
+                        "type": "string",
+                        "description": "securityIdentifier"
+                      },
+                      "theme": {
+                        "type": "string",
+                        "description": "theme"
+                      },
+                      "visibility": {
+                        "type": "string",
+                        "description": "visibility"
+                      },
+                      "onPremisesProvisioningErrors": {
+                        "type": "array",
+                        "items": {},
+                        "description": "onPremisesProvisioningErrors"
+                      }
+                    }
+                  },
+                  "description": "value"
+                }
+              }
+            },
+            "headers": {
+              "content-type": {
+                "description": "content-type",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "summary": "ListMSTeams",
+        "operationId": "ListMSTeams",
+        "description": "List MS Teams through MS Graph",
+        "parameters": [
+          {
+            "name": "$filter",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": "resourceProvisioningOptions/Any(x:x eq 'Team')",
+            "x-ms-visibility": "internal"
+          },
+          {
+            "name": "content-type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "application/json",
+            "x-ms-visibility": "internal"
+          }
+        ]
+      }
+    },
+    "/v1.0/sites": {
+      "get": {
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "@odata.context": {
+                  "type": "string",
+                  "description": "@odata.context"
+                },
+                "value": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "createdDateTime": {
+                        "type": "string",
+                        "description": "createdDateTime"
+                      },
+                      "id": {
+                        "type": "string",
+                        "description": "id"
+                      },
+                      "lastModifiedDateTime": {
+                        "type": "string",
+                        "description": "lastModifiedDateTime"
+                      },
+                      "name": {
+                        "type": "string",
+                        "description": "name"
+                      },
+                      "webUrl": {
+                        "type": "string",
+                        "description": "webUrl"
+                      },
+                      "displayName": {
+                        "type": "string",
+                        "description": "displayName"
+                      },
+                      "root": {
+                        "type": "object",
+                        "properties": {},
+                        "description": "root"
+                      },
+                      "siteCollection": {
+                        "type": "object",
+                        "properties": {
+                          "hostname": {
+                            "type": "string",
+                            "description": "hostname"
+                          }
+                        },
+                        "description": "siteCollection"
+                      },
+                      "description": {
+                        "type": "string",
+                        "description": "description"
+                      }
+                    }
+                  },
+                  "description": "value"
+                }
+              }
+            },
+            "headers": {
+              "content-type": {
+                "description": "content-type",
+                "type": "string"
+              }
+            }
+          }
+        },
+        "summary": "ListSPOSites",
+        "operationId": "ListSPOSites",
+        "description": "List SPO Sites you have access to through MS Graph",
+        "parameters": [
+          {
+            "name": "search",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "default": "*",
+            "x-ms-visibility": "internal"
+          },
+          {
+            "name": "content-type",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "application/json",
+            "x-ms-visibility": "internal"
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "undefined": {
+      "type": "oauth2",
+      "flow": "accessCode",
+      "authorizationUrl": "https://login.windows.net/common/oauth2/authorize",
+      "tokenUrl": "https://login.windows.net/common/oauth2/authorize",
+      "scopes": {}
+    }
+  },
+  "security": [
+    {
+      "undefined": []
+    }
+  ],
+  "tags": []
+}
